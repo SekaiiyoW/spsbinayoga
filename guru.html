@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guru - PAUD SPS Bina Yoga</title>
+
+<link rel="stylesheet" href="guru.css">
+<link rel="icon" href="IMG_0204.PNG" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container nav">
+        <div class="logo">
+            <img src="IMG_0204.PNG">
+            <h2>PAUD SPS Bina Yoga</h2>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="guru.html">Guru</a></li>
+            <li><a href="ppdb.html">PPDB</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- TITLE -->
+<section class="section">
+    <div class="container">
+        <h2>Tenaga Pendidik</h2>
+        <p class="subtitle">Guru profesional dan berpengalaman di PAUD SPS Bina Yoga</p>
+
+        <div class="guru-grid">
+
+            <div class="guru-card">
+                <img src="Riza.jpeg" onclick="openImage(this.src)">
+                <h3>Bu Yanuarita Rizayanti</h3>
+                <p>Kepala Sekolah</p>
+            </div>
+
+            <div class="guru-card">
+                <img src="Wahyu Setyarini.jpeg" onclick="openImage(this.src)">
+                <h3>Bu Wahyu Setyarini</h3>
+                <p>Guru Kelas Apel</p>
+            </div>
+
+            <div class="guru-card">
+                <img src="Siti Hilaliyah.jpeg" onclick="openImage(this.src)">
+                <h3>Bu Siti Hilaliyah</h3>
+                <p>Guru Kelas Apel</p>
+            </div>
+
+            <div class="guru-card">
+                <img src="Krisni Dwi LEstari.jpeg" onclick="openImage(this.src)">
+                <h3>Bu Krisni Dwi Lestari</h3>
+                <p>Guru Kelas Pisang</p>
+            </div>
+
+            <div class="guru-card">
+                <img src="Ari Susanti.jpeg" onclick="openImage(this.src)">
+                <h3>Bu Ari Susanti</h3>
+                <p>Guru Kelas Apel</p>
+            </div>
+
+            <div class="guru-card">
+                <img src="Muzdalifah.jpeg" onclick="openImage(this.src)">
+                <h3>Bu Muzdalifah</h3>
+                <p>Guru Kelas Pisang</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 PAUD SPS Bina Yoga</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>

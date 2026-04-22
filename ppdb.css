@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(
+        135deg,
+        #1E3A5F,
+        #2C5C8A,
+        #3A7CA5
+    );
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* ini kunci utama */
+    gap: 10px;
+}
+
+.logo img {
+    height: 75px;       /* ukuran utama */
+    width: auto;        /* biar proporsional */
+    max-height: 75px;   /* batas maksimal */
+    object-fit: contain;
+}
+.logo h2 {
+    color: white;          /* biar putih */
+    font-size: 24px;       /* biar proporsional */
+    font-weight: 600;      /* biar tegas */
+    margin: 0;             /* hilangkan jarak default */
+    line-height: 1;        /* biar sejajar vertikal */
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav ul li a {
+    position: relative;
+    display: inline-block; /* ini penting */
+    color: white;
+    text-decoration: none;
+
+    padding-bottom: 2px; /* kasih ruang buat garis */
+    line-height: 1; /* biar nggak terlalu tinggi */
+}
+
+/* GARIS */
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* nempel ke teks */
+
+    width: 0%;
+    height: 2px;
+
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+/* HOVER */
+.nav ul li a:hover::after {
+    width: 100%;
+}
+/* =========================
+   HERO (PPDB / HOME)
+========================= */
+.hero-slider {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+/* SLIDE */
+.hero-slider .slide {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hero-slider .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0.45);
+
+    z-index: 1;
+}
+
+.hero-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* AKTIF */
+.hero-slider .slide.active {
+    opacity: 1;
+}
+
+/* OVERLAY GELAP + TEKS */
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+}
+
+.hero-content p {
+    margin: 10px 0;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background: #1E3A5F;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #2C5C8A;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   SECTION
+========================= */
+/* =========================
+   KONTAK
+========================= */
+.contact-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    line-height: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+}
+
+.contact-box p {
+    font-size: 16px;
+}
+
+.contact-box a {
+    color: #1E3A5F;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1E3A5F;
+}
+
+/* =========================
+   GRID BOX (INFO / ALUR)
+========================= */
+.grid {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   CARD LIST (SYARAT)
+========================= */
+.card-list {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    line-height: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   CTA
+========================= */
+.cta {
+    background: #1E3A5F;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* animasi masuk */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.cta h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cta .btn {
+    background: #fff;
+    color: #1E3A5F;
+    border: 2px solid #1E3A5F;
+}
+
+.cta .btn:hover {
+    background: #1E3A5F;
+    color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #1E3A5F;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1024px) {
+    .hero-slider {
+        height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo h2 {
+        font-size: 18px;
+    }
+
+    /* HERO */
+    .hero-slider {
+        height: 320px;
+    }
+
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    /* GRID */
+    .grid {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    /* CONTACT */
+    .contact-box {
+        width: 100%;
+        max-width: 100%;
+    }
+}

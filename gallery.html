@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri Kegiatan - PAUD SPS Bina Yoga</title>
+
+<link rel="stylesheet" href="gallery.css">
+<link rel="icon" href="IMG_0204.PNG" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER (opsional bisa sama seperti home) -->
+<header class="header">
+    <div class="container nav">
+        <div class="logo">
+            <img src="IMG_0204.PNG">
+            <h2>PAUD SPS Bina Yoga</h2>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="guru.html">Guru</a></li>
+            <li><a href="ppdb.html">PPDB</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- TITLE -->
+<section class="section">
+    <div class="container">
+        <h2 class="title">Galeri Kegiatan Anak</h2>
+        <p class="subtitle">Dokumentasi berbagai kegiatan belajar dan bermain di PAUD SPS Bina Yoga</p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="pensi.jpeg">
+                <p>Pentas Seni HUT Kemerdekaan RI</p>
+            </div>
+
+            <div class="card">
+                <img src="karnaval hut.jpeg">
+                <p>Karnaval HUT Kemerdekaan RI</p>
+            </div>
+
+            <div class="card">
+                <img src="mewarnai.jpeg">
+                <p>Lomba Mewarnai</p>
+            </div>
+
+            <div class="card">
+                <img src="gebyar.jpeg">
+                <p>Gebyar PAUD Kalurahan Candibinangun</p>
+            </div>
+
+            <div class="card">
+                <img src="renang.jpeg">
+                <p>Kegiatan Outing Class Renang</p>
+            </div>
+
+            <div class="card">
+                <img src="mbg.jpeg">
+                <p>Kegiatan Maka Bergizi Gratis</p>
+            </div>
+
+            <div class="card">
+                <img src="Latihan Manasik Haji.jpeg">
+                <p>Latihan Manasik Haji</p>
+            </div>
+
+            <div class="card">
+                <img src="Peringatan Hari Kartini.jpeg">
+                <p>Peringatan Hari Kartini</p>
+            </div>
+
+            <div class="card">
+                <img src="Parenting Wali Murid.jpeg">
+                <p>Parenting Wali Murid</p>
+            </div>
+
+             <div class="card">
+                <img src="Wisuda dan Pelepasan Peserta Didik.jpeg">
+                <p>Wisuda dan Pelepasan Peserta Didik</p>
+            </div>
+
+             <div class="card">
+                <img src="Lomba HUT RI.jpeg">
+                <p>Lomba HUT RI</p>
+
+            </div> <div class="card">
+                <img src="main pembukaan.jpeg">
+                <p>Main Pembukaan</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 PAUD SPS Bina Yoga</p>
+</footer>
+
+<!-- IMAGE MODAL -->
+<div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+// open modal
+document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", function () {
+        modal.classList.add("show");
+        modalImg.src = this.src;
+    });
+});
+
+// close modal
+closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+});
+
+// klik luar gambar
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("show");
+    }
+});
+</script>
+
+</body>
+</html>

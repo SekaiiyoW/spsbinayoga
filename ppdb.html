@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPDB - PAUD SPS Bina Yoga</title>
+
+<link rel="stylesheet" href="ppdb.css">
+<link rel="icon" href="IMG_0204.PNG" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container nav">
+        <div class="logo">
+            <img src="IMG_0204.PNG">
+            <h2>PAUD SPS Bina Yoga</h2>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="gallery.html">Galeri</a></li>
+            <li><a href="guru.html">Guru</a></li>
+            <li><a href="ppdb.html">PPDB</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO PPDB -->
+<section class="hero-slider">
+    
+    <div class="slide active" style="background-image: url('mewarnai.jpeg');">
+        <div class="container hero-content">
+            <h1>PPDB PAUD SPS Bina Yoga</h1>
+            <p>Penerimaan Peserta Didik Baru Tahun Ajaran 2026/2027</p>
+            <a href="#daftar" class="btn">Daftar Sekarang</a>
+        </div>
+    </div>
+
+    <div class="slide" style="background-image: url('WhatsApp\ Image\ 2026-04-21\ at\ 9.17.00\ PM.jpeg');">
+        <div class="container hero-content">
+            <h1>Lingkungan Belajar Nyaman</h1>
+            <p>Anak belajar dengan ceria dan aman</p>
+            <a href="#daftar" class="btn">Daftar Sekarang</a>
+        </div>
+    </div>
+
+    <div class="slide" style="background-image: url('renang.jpeg');">
+        <div class="container hero-content">
+            <h1>Bergabung Sekarang</h1>
+            <p>Daftarkan anak Anda segera</p>
+            <a href="#daftar" class="btn">Daftar Sekarang</a>
+        </div>
+    </div>
+
+</section>
+<!-- SYARAT -->
+<section class="section bg-light">
+    <div class="container">
+        <h2>Syarat Pendaftaran</h2>
+
+        <div class="card-list">
+            <p>✔ Membayar biaya pendaftaran</p>
+            <p>✔ Mengisi formulir pendaftaran</p>
+            <p>✔ Menyerahkan foto berukuran 3x4 (memakai seragam) 6 lembar</p>
+            <p>✔ Menyerahkan fotocopy akta kelahiran 1 lembar</p>
+            <p>✔ Menyerahkan fotocopy Kartu Identitas Anak 1 lembar</p>
+            <p>✔ Menyerahkan fotocopy Kartu Keluarga 1 lembar</p>
+        </div>
+    </div>
+</section>
+
+<!-- ALUR -->
+<section class="section">
+    <div class="container">
+        <h2>Alur Pendaftaran</h2>
+
+        <div class="grid">
+            <div class="box">1. Isi Formulir</div>
+            <div class="box">2. Verifikasi Data</div>
+            <div class="box">3. Konfirmasi Sekolah</div>
+            <div class="box">4. Pendaftaran</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="daftar">
+    <div class="container">
+        <h2>Ayo Daftarkan Anak Anda Sekarang</h2>
+        <a href="https://wa.me/085643553725" class="btn" target="_blank">Hubungi Admin</a>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section class="section bg-light">
+    <div class="container">
+        <h2>Kontak</h2>
+
+        <div class="contact-box">
+            <p>
+                <img src="wa logo.png" alt="WhatsApp" class="icon">
+                WhatsApp:
+                <a href="https://wa.me/6285643553725" target="_blank">085643553725</a>
+</p>
+            <p>📍 Alamat: Nepen, Candibinangun, Pakem, Sleman</p>
+            <p>🕒 Jam Operasional: Senin - Selasa & Kamis - Jumat (Rabu Libur), 08.00 - 11.00 WIB</p>
+        </div>
+
+    </div>
+</section>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 PAUD SPS Bina Yoga</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".hero-slider .slide");
+    let index = 0;
+
+    function showSlide(i) {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[i].classList.add("active");
+    }
+
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }, 4000);
+});
+</script>
+
+</body>
+</html>

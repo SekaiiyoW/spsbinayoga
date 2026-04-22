@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(
+        135deg,
+        #1E3A5F,
+        #2C5C8A,
+        #3A7CA5
+    );
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* ini kunci utama */
+    gap: 10px;
+}
+
+.logo img {
+    height: 75px;       /* ukuran utama */
+    width: auto;        /* biar proporsional */
+    max-height: 75px;   /* batas maksimal */
+    object-fit: contain;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav ul li a {
+    position: relative;
+    display: inline-block; /* ini penting */
+    color: white;
+    text-decoration: none;
+
+    padding-bottom: 2px; /* kasih ruang buat garis */
+    line-height: 1; /* biar nggak terlalu tinggi */
+}
+
+/* GARIS */
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* nempel ke teks */
+
+    width: 0%;
+    height: 2px;
+
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+/* HOVER */
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section {
+    padding: 60px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #1E3A5F;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* GAMBAR 16:9 */
+.card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* CAPTION */
+.card p {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* =========================
+   MODAL FULLSCREEN FIX
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; /* lebih clean dari top/left/width/height */
+    z-index: 9999;
+
+    background: rgba(0,0,0,0.92);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* aktifkan flex saat tampil */
+.modal.show {
+    display: flex;
+}
+
+/* gambar */
+.modal-content {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 10px;
+    animation: zoom 0.25s ease;
+}
+
+@keyframes zoom {
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
+}
+
+/* close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #1E3A5F;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* TITLE */
+    .title {
+        font-size: 26px;
+    }
+
+    /* GALLERY */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    /* MODAL */
+    .modal-content {
+        max-width: 95%;
+    }
+}
